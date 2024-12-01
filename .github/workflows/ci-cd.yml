@@ -30,3 +30,10 @@ jobs:
         file: app.dockerfile
         push: true
         tags: ghcr.io/${{ github.repository_owner }}/myapp:latest
+
+    - name: Install Trivy
+      run: |
+        curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -
+
+    - name: Scan Docker image for vulnerabilities
+      run: ./trivy image ghcr.io/${{ github.repository_owner }}/myapp:latest
