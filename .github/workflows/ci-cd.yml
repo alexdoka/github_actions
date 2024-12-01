@@ -40,6 +40,3 @@ jobs:
 
     - name: Run performance tests
       uses: ./.github/actions/performance-test
-      with:
-        context: .github/actions/performance-test
-        file: app.dockerfile
