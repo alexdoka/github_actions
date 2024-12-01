@@ -1,1 +1,6 @@
-# add your code here.
+name: 'Performance Test'
+description: 'Run JMeter performance tests'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  entrypoint: '/entrypoint.sh'
